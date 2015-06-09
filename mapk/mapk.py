@@ -36,7 +36,7 @@ class Model(object):
         self.integrator = scipy.integrate.ode(self.ode_rhs)
         self.integrator.set_integrator('vode', method='bdf', with_jacobian=True, rtol=1e-3, atol=1e-6,nsteps=500,order=5)
  
-    def __init__(self):
+    def __init__(self, var_scale=0.0):
         global rng
         self.y = None
         self.yobs = None
